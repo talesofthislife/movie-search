@@ -5,6 +5,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import './style.css'
 import App from './App.vue'
 import Home from './pages/Home.vue'
+import BaseCard from './components/ui/BaseCard.vue';
+import BaseList from './components/ui/BaseList.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -23,5 +25,9 @@ app.config.errorHandler = (err, instance, info) => {
 }
 
 app.use(router);
+
+// Global components
+app.component('BaseCard', BaseCard);
+app.component('BaseList', BaseList)
 
 app.mount('#app')

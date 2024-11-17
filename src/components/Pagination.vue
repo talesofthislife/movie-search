@@ -1,65 +1,68 @@
 <template>
-    <ul class="pagination">
-        <li class="pagination-item">
-            <button
-                type="button"
-                @click="onClickFirstPage"
-                :disabled="isInFirstPage"
-                aria-label="Go to first page"
-            >
-                First
-            </button>
-        </li>
+    <div class="relative">
+        <ul class="pagination absolute bottom-0 right-0 top-3">
+            <li class="pagination-item">
+                <button
+                    type="button"
+                    @click="onClickFirstPage"
+                    :disabled="isInFirstPage"
+                    aria-label="Go to first page"
+                >
+                    First
+                </button>
+            </li>
+    
+            <li class="pagination-item">
+                <button
+                    type="button"
+                    @click="onClickPreviousPage"
+                    :disabled="isInFirstPage"
+                    aria-label="Go to previous page"
+                >
+                    Previous
+                </button>
+            </li>
+    
+            <!-- Visible Buttons Start -->
+    
+            <li v-for="page in pages" class="pagination-item">
+                <button
+                    type="button"
+                    @click="onClickPage(page.name)"
+                    :disabled="page.isDisabled"
+                    :class="{active: isPageActive(page.name)}"
+                    :aria-label="`Go to page number ${page.name}`"
+                >
+                    {{ page.name }}
+                </button>
+            </li>
+    
+            <!-- Visible Buttons End -->
+    
+            <li class="pagination-item">
+                <button
+                    type="button"
+                    @click="onClickNextPage"
+                    :disabled="isInLastPage"
+                    aria-label="Go to next page"
+                >
+                    Next
+                </button>
+            </li>
+    
+            <li class="pagination-item">
+                <button
+                    type="button"
+                    @click="onClickLastPage"
+                    :disabled="isInLastPage"
+                    aria-label="Go to last page"
+                >
+                    Last
+                </button>
+            </li>
+        </ul>
 
-        <li class="pagination-item">
-            <button
-                type="button"
-                @click="onClickPreviousPage"
-                :disabled="isInFirstPage"
-                aria-label="Go to previous page"
-            >
-                Previous
-            </button>
-        </li>
-
-        <!-- Visible Buttons Start -->
-
-        <li v-for="page in pages" class="pagination-item">
-            <button
-                type="button"
-                @click="onClickPage(page.name)"
-                :disabled="page.isDisabled"
-                :class="{active: isPageActive(page.name)}"
-                :aria-label="`Go to page number ${page.name}`"
-            >
-                {{ page.name }}
-            </button>
-        </li>
-
-        <!-- Visible Buttons End -->
-
-        <li class="pagination-item">
-            <button
-                type="button"
-                @click="onClickNextPage"
-                :disabled="isInLastPage"
-                aria-label="Go to next page"
-            >
-                Next
-            </button>
-        </li>
-
-        <li class="pagination-item">
-            <button
-                type="button"
-                @click="onClickLastPage"
-                :disabled="isInLastPage"
-                aria-label="Go to last page"
-            >
-                Last
-            </button>
-        </li>
-    </ul>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -167,7 +170,7 @@ function isPageActive(page) {
 }
 </script>
 
-<style>
+<style scoped>
 .pagination {
   list-style-type: none;
 }

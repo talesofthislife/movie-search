@@ -1,5 +1,7 @@
 <!-- Component that will render the list of movies -->
  <!-- https://vuejs.org/guide/essentials/list#v-for -->
+  <!-- For now this lists the most popular movies -->
+   <!-- TODO: this should be updated to just list any movies according to selection -->
  <template>
 
     <div>
@@ -12,6 +14,11 @@
             <!-- Render the table only if popularMovies has data -->
         <div v-else>
             <h3>Here's a list of the latest movies in {{ countryName }}</h3>
+
+            
+
+
+
             <table>
                 <thead>
                     <tr>
@@ -46,10 +53,10 @@
 
  <script lang="ts" setup>
 
-import Pagination from '../components/Pagination.vue';
-import {getVisitorGeoLookup} from '../api/utils/getVisitorCountryCode';
-import {getPopularMoviesByRegion, getMoviesGenres} from '../api/tmdb';
-import type { PopularMoviesResponse, MovieGenresResponse } from '../api/tmdb';
+import Pagination from '../Pagination.vue';
+import {getVisitorGeoLookup} from '../../api/utils/getVisitorCountryCode';
+import {getPopularMoviesByRegion, getMoviesGenres} from '../../api/tmdb';
+import type { PopularMoviesResponse, MovieGenresResponse } from '../../api/tmdb';
 
 import { ref, onMounted, defineProps, computed } from 'vue';
 
