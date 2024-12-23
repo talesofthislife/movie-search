@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import ListPopularMovies from '../components/movies/ListPopularMovies.vue';
+
+</script>
+
 <template>
     <!-- max-w-4xl: Limits the container width to approximately 1024px -->
     <!-- px-4: Adds horizontal padding inside the container for better spacing on smaller screens. -->
@@ -8,7 +13,3 @@
     </div>
 </template>
 
-<script lang="ts" setup>
-import ListPopularMovies from '../components/movies/ListPopularMovies.vue';
-
-</script>
