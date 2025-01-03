@@ -8,12 +8,14 @@ export default defineConfig(({ command, mode }) => {
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd(), '');
 
+  const isDev = mode === 'development';
+
   return {
     // vite config
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
     plugins: [vue()],
-    base: '/movie-search/'
+    base: isDev ? '/' : '/movie-search/'
   }
 })
