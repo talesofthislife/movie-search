@@ -8,3 +8,18 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 https://vite.dev/guide/
 
 npm create vite@latest
+
+## Deploy Vite App using Github pages
+
+https://medium.com/@aishwaryaparab1/deploying-vite-deploying-vite-app-to-github-pages-166fff40ffd3
+
+Run the following to deploy to github:
+
+```bash
+npm run build
+npm run deploy
+```
+
+Add the complete website URL by setting homepage in package.json
+
+Navigate to your remote repository on GitHub -> Settings -> Pages (left sidebar). Select source as “Deploy from branch” and branch as “gh-pages”.
