@@ -71,12 +71,12 @@ function toggleMobileMenu() {
                             class="absolute bg-orange-300 min-w-[150px] text-left text-sm rounded-md"
                         >
                             <li>
-                                <router-link to="/movies/popular" class="block px-1 py-2">
+                                <router-link to="/movies/popular" class="block px-1 mt-3">
                                     Popular Movies
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/movies/top-rated" class="block px-1 py-2">
+                                <router-link to="/movies/top-rated" class="block px-1 my-3">
                                     Top Rated Movies
                                 </router-link>
                             </li>
@@ -101,12 +101,12 @@ function toggleMobileMenu() {
                             class="absolute bg-orange-300 min-w-[150px] text-left text-sm rounded-md"
                         >
                             <li>
-                                <router-link to="/tv-series/popular" class="block px-1 py-2">
+                                <router-link to="/tv-series/popular" class="block px-1 mt-3">
                                     Popular TV Series
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/tv-series/top-rated" class="block px-1 py-2">
+                                <router-link to="/tv-series/top-rated" class="block px-1 my-3">
                                     Top Rated TV Series
                                 </router-link>
                             </li>
