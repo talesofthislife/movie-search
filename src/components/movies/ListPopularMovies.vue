@@ -45,6 +45,9 @@
                      <p class="mt-1 text-xs/5 text-gray-500">
                          Average Vote: {{ popularMovie.vote_average }}
                      </p>
+                     <p class="mt-1 text-xs/5 text-gray-500">
+                         Release Date: {{ popularMovie.release_date }}
+                     </p>
                  </div>
              </li>
 
